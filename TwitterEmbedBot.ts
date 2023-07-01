@@ -119,6 +119,7 @@ export class TwitterEmbedBot extends BotWithConfig {
                 return;
             }
 
+            result.allowedMentions = { repliedUser: false };
             await message.reply(result);
         } catch (error) {
             this.logger.error(`Ran into error in handleMessage(), ignoring:\n${error}`);
